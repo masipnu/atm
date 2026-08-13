@@ -1,0 +1,620 @@
+/* ========================================
+   ATM LAB RPL
+   Custom Theme
+   ======================================== */
+
+:root {
+    --atm-dark: #031b3d;
+    --atm-blue: #063b7a;
+    --atm-blue-light: #0d5dcc;
+    --atm-yellow: #ffc400;
+    --atm-yellow-hover: #ffd633;
+    --atm-white: #ffffff;
+    --atm-muted: #b8c7dc;
+    --atm-border: rgba(255, 255, 255, 0.20);
+    --atm-card: rgba(4, 38, 82, 0.85);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--atm-white);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #0c4d9d 0%,
+            #06336d 35%,
+            #031b3d 100%
+        );
+
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   LAYOUT
+   ======================================== */
+
+.atm-screen {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.atm-content {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+.atm-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.atm-header {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    border-bottom: 1px solid var(--atm-border);
+
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.atm-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.atm-brand i {
+    font-size: 2rem;
+    color: var(--atm-yellow);
+}
+
+.atm-account {
+    color: var(--atm-muted);
+
+    font-size: 0.95rem;
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.atm-footer {
+    text-align: center;
+
+    padding: 18px;
+
+    color: var(--atm-muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* ========================================
+   LOGIN
+   ======================================== */
+
+.login-wrapper {
+    width: 100%;
+    max-width: 480px;
+
+    text-align: center;
+}
+
+.login-brand {
+    margin-bottom: 35px;
+}
+
+.login-brand i {
+    font-size: 4rem;
+
+    color: var(--atm-yellow);
+}
+
+.login-brand h1 {
+    margin: 10px 0 0;
+
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.login-brand p {
+    margin-top: 5px;
+
+    color: var(--atm-muted);
+
+    font-size: 1rem;
+}
+
+.login-card {
+    padding: 35px;
+
+    border: 1px solid var(--atm-border);
+
+    border-radius: 20px;
+
+    background: var(--atm-card);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.login-card h2 {
+    font-size: 1.3rem;
+
+    margin-bottom: 30px;
+}
+
+.form-label {
+    color: var(--atm-muted);
+
+    font-weight: 600;
+}
+
+.form-control {
+    min-height: 58px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-size: 1.1rem;
+}
+
+.form-control:focus {
+    border-color: var(--atm-yellow);
+
+    box-shadow:
+        0 0 0 0.2rem rgba(255, 196, 0, 0.2);
+}
+
+
+/* ========================================
+   BUTTON
+   ======================================== */
+
+.btn-atm {
+    min-height: 55px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--atm-yellow);
+
+    color: #111;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    transition: 0.2s;
+}
+
+.btn-atm:hover {
+    background: var(--atm-yellow-hover);
+
+    color: #111;
+
+    transform: translateY(-2px);
+}
+
+.btn-atm-blue {
+    min-height: 50px;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    border-radius: 10px;
+
+    background: var(--atm-blue-light);
+
+    color: white;
+
+    font-weight: 700;
+}
+
+.btn-atm-blue:hover {
+    background: #1970df;
+
+    color: white;
+}
+
+.btn-back {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 50px;
+
+    padding: 0 30px;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    border: 1px solid var(--atm-border);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.btn-back:hover {
+    background: rgba(255,255,255,.08);
+
+    color: white;
+}
+
+
+/* ========================================
+   DASHBOARD
+   ======================================== */
+
+.welcome-text {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.welcome-text .small-title {
+    color: var(--atm-muted);
+
+    font-size: 1.1rem;
+
+    letter-spacing: 1px;
+}
+
+.welcome-text h1 {
+    margin: 5px 0;
+
+    font-size: 3rem;
+
+    font-weight: 800;
+}
+
+.welcome-text p {
+    color: var(--atm-muted);
+
+    font-size: 1.05rem;
+}
+
+
+/* ========================================
+   MENU CARD
+   ======================================== */
+
+.atm-menu-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 190px;
+
+    padding: 25px;
+
+    border: 1px solid var(--atm-border);
+
+    border-radius: 18px;
+
+    background: rgba(3, 28, 62, 0.7);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.atm-menu-card:hover {
+    color: white;
+
+    background: rgba(13, 93, 204, 0.65);
+
+    border-color: var(--atm-yellow);
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.atm-menu-card i {
+    font-size: 3.5rem;
+
+    margin-bottom: 15px;
+
+    color: var(--atm-yellow);
+}
+
+.atm-menu-card span {
+    font-size: 1.1rem;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   PAGE TITLE
+   ======================================== */
+
+.atm-page {
+    text-align: center;
+}
+
+.atm-page-title {
+    margin-bottom: 30px;
+}
+
+.atm-page-title h1 {
+    font-size: 2.8rem;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.atm-page-title p {
+    color: var(--atm-muted);
+}
+
+
+/* ========================================
+   BALANCE
+   ======================================== */
+
+.balance-card {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    border: 1px solid var(--atm-border);
+
+    border-radius: 20px;
+
+    background: rgba(2, 25, 55, 0.85);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
+}
+
+.balance-label {
+    color: var(--atm-muted);
+
+    font-size: 1.1rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.balance-value {
+    margin-top: 15px;
+
+    color: var(--atm-yellow);
+
+    font-size: clamp(2.5rem, 7vw, 5rem);
+
+    font-weight: 800;
+}
+
+
+/* ========================================
+   WITHDRAW
+   ======================================== */
+
+.withdraw-card {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--atm-border);
+
+    background: rgba(2, 25, 55, 0.85);
+}
+
+.withdraw-input {
+    min-height: 70px;
+
+    font-size: 1.8rem;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.amount-btn {
+    min-height: 60px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--atm-border);
+
+    background: rgba(255,255,255,.05);
+
+    color: white;
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+}
+
+.amount-btn:hover {
+    background: var(--atm-yellow);
+
+    color: #111;
+
+    border-color: var(--atm-yellow);
+}
+
+
+/* ========================================
+   TRANSACTION TABLE
+   ======================================== */
+
+.transaction-card {
+    overflow: hidden;
+
+    border: 1px solid var(--atm-border);
+
+    border-radius: 15px;
+
+    background: rgba(2, 25, 55, 0.85);
+}
+
+.transaction-table {
+    margin: 0;
+
+    color: white;
+
+    vertical-align: middle;
+}
+
+.transaction-table thead th {
+    padding: 16px;
+
+    background: rgba(0,0,0,.25);
+
+    color: var(--atm-muted);
+
+    font-size: .85rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+}
+
+.transaction-table tbody td {
+    padding: 15px;
+
+    border-color: rgba(255,255,255,.08);
+}
+
+.badge-tarik {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(220,53,69,.15);
+
+    border: 1px solid rgba(220,53,69,.5);
+
+    color: #ff8f9b;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   ALERT
+   ======================================== */
+
+.atm-alert {
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    .atm-header {
+        padding: 0 15px;
+    }
+
+    .atm-brand {
+        font-size: 1.2rem;
+    }
+
+    .atm-account {
+        font-size: .8rem;
+    }
+
+    .welcome-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .atm-page-title h1 {
+        font-size: 2.2rem;
+    }
+
+    .login-brand h1 {
+        font-size: 2.3rem;
+    }
+
+    .login-card {
+        padding: 25px;
+    }
+
+    .atm-menu-card {
+        min-height: 150px;
+    }
+
+    .atm-menu-card i {
+        font-size: 2.5rem;
+    }
+
+    .transaction-card {
+        overflow-x: auto;
+    }
+
+}
