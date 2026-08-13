@@ -27,74 +27,222 @@ $result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
-    <title>Riwayat Transaksi</title>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>ATM - Riwayat Transaksi</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/atm.css"
+    >
+
 </head>
+
 <body>
 
-<h1>Riwayat Transaksi</h1>
+<div class="atm-screen">
 
-<table border="1" cellpadding="8">
 
-<tr>
-    <th>Waktu</th>
-    <th>Jenis</th>
-    <th>Jumlah</th>
-    <th>Saldo Sebelum</th>
-    <th>Saldo Sesudah</th>
-</tr>
+    <header class="atm-header">
 
-<?php while ($data = mysqli_fetch_assoc($result)): ?>
+        <div class="atm-brand">
 
-<tr>
+            <i class="bi bi-bank"></i>
 
-    <td>
-        <?= $data['waktu'] ?>
-    </td>
+            <span>ATM</span>
 
-    <td>
-        <?= $data['jenis'] ?>
-    </td>
+        </div>
 
-    <td>
-        Rp <?= number_format(
-            $data['jumlah'],
-            0,
-            ',',
-            '.'
-        ) ?>
-    </td>
+        <div class="atm-account">
 
-    <td>
-        Rp <?= number_format(
-            $data['saldo_sebelum'],
-            0,
-            ',',
-            '.'
-        ) ?>
-    </td>
+            Rekening:
+            <strong>
+                <?= $_SESSION['rekening'] ?>
+            </strong>
 
-    <td>
-        Rp <?= number_format(
-            $data['saldo_sesudah'],
-            0,
-            ',',
-            '.'
-        ) ?>
-    </td>
+        </div>
 
-</tr>
+    </header>
 
-<?php endwhile; ?>
 
-</table>
+    <main class="atm-content">
 
-<br>
+        <div class="atm-container atm-page">
 
-<a href="index.php">
-    Kembali
-</a>
+
+            <div class="atm-page-title">
+
+                <h1>
+
+                    <i class="bi bi-receipt me-2"></i>
+
+                    RIWAYAT TRANSAKSI
+
+                </h1>
+
+                <p>
+                    Daftar transaksi rekening Anda
+                </p>
+
+            </div>
+
+
+            <div class="transaction-card">
+
+
+                <div class="table-responsive">
+
+                    <table
+                        class="table
+                               transaction-table
+                               text-nowrap"
+                    >
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Waktu</th>
+
+                                <th>Jenis</th>
+
+                                <th>Jumlah</th>
+
+                                <th>Saldo Sebelum</th>
+
+                                <th>Saldo Sesudah</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                        <?php while (
+                            $data =
+                            mysqli_fetch_assoc($result)
+                        ): ?>
+
+                            <tr>
+
+                                <td>
+                                    <?= $data['waktu'] ?>
+                                </td>
+
+
+                                <td>
+
+                                    <span class="badge-tarik">
+
+                                        <?= $data['jenis'] ?>
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    Rp
+                                    <?= number_format(
+                                        $data['jumlah'],
+                                        0,
+                                        ',',
+                                        '.'
+                                    ) ?>
+
+                                </td>
+
+
+                                <td>
+
+                                    Rp
+                                    <?= number_format(
+                                        $data['saldo_sebelum'],
+                                        0,
+                                        ',',
+                                        '.'
+                                    ) ?>
+
+                                </td>
+
+
+                                <td>
+
+                                    Rp
+                                    <?= number_format(
+                                        $data['saldo_sesudah'],
+                                        0,
+                                        ',',
+                                        '.'
+                                    ) ?>
+
+                                </td>
+
+                            </tr>
+
+                        <?php endwhile; ?>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="mt-4">
+
+                <a
+                    href="index.php"
+                    class="btn btn-atm-blue px-5"
+                >
+
+                    <i class="bi bi-arrow-left me-2"></i>
+
+                    KEMBALI KE MENU
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <footer class="atm-footer">
+
+        ATM LAB RPL
+
+    </footer>
+
+
+</div>
 
 </body>
+
 </html>

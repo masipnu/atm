@@ -51,35 +51,162 @@ if (isset($_POST['login'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
-    <title>ATM - Login</title>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>ATM LAB RPL</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="assets/css/atm.css"
+    >
+
 </head>
+
 <body>
 
-<h1>ATM</h1>
+<div class="atm-screen">
 
-<?php if ($pesan != ""): ?>
-    <p><?= $pesan ?></p>
-<?php endif; ?>
+    <main class="atm-content">
 
-<form method="post">
+        <div class="login-wrapper">
 
-    <label>Nomor Rekening</label><br>
-    <input type="text" name="rekening" required>
+            <div class="login-brand">
 
-    <br><br>
+                <i class="bi bi-bank"></i>
 
-    <label>PIN</label><br>
-    <input type="password" name="pin" required>
+                <h1>ATM</h1>
 
-    <br><br>
+                <p>
+                    SISTEM SIMULASI TRANSAKSI
+                </p>
 
-    <button type="submit" name="login">
-        LOGIN
-    </button>
+            </div>
 
-</form>
+
+            <div class="login-card">
+
+                <h2>
+                    SILAKAN MASUKKAN
+                    <br>
+                    REKENING DAN PIN ANDA
+                </h2>
+
+
+                <?php if ($pesan != ""): ?>
+
+                    <div class="alert alert-danger atm-alert">
+                        <i class="bi bi-exclamation-circle me-2"></i>
+                        <?= $pesan ?>
+                    </div>
+
+                <?php endif; ?>
+
+
+                <form method="post">
+
+                    <div class="text-start mb-4">
+
+                        <label class="form-label">
+                            Nomor Rekening
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                <i class="bi bi-person-vcard"></i>
+                            </span>
+
+                            <input
+                                type="text"
+                                name="rekening"
+                                class="form-control"
+                                placeholder="Masukkan nomor rekening"
+                                required
+                                autofocus
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="text-start mb-4">
+
+                        <label class="form-label">
+                            PIN
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                <i class="bi bi-lock"></i>
+                            </span>
+
+                            <input
+                                type="password"
+                                name="pin"
+                                class="form-control"
+                                placeholder="Masukkan PIN"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        name="login"
+                        class="btn btn-atm w-100"
+                    >
+
+                        <i class="bi bi-box-arrow-in-right me-2"></i>
+
+                        LOGIN
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="atm-footer">
+
+        <i class="bi bi-shield-lock me-1"></i>
+
+        ATM LAB RPL · Sistem Simulasi Pembelajaran
+
+    </footer>
+
+</div>
 
 </body>
 </html>
