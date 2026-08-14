@@ -1,6 +1,6 @@
 <?php
 
-$host       = "localhost";     // ganti dengan ip komputer server database
+$host       = "192.168.30.99";     // ganti dengan ip komputer server database
 $user       = "atm";
 $password   = "atm123";
 $database   = "atm";
